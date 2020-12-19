@@ -1,3 +1,3 @@
 (function() {
-    alert('unicorn!');
+    alert('rainbow is now on!');
   })();
