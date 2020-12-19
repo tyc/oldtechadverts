@@ -1,3 +1,3 @@
 (function() {
-    alert('rainbow is now on!');
+    alert('We are now killing it');
   })();
