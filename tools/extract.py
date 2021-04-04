@@ -2,6 +2,7 @@
 import os
 import subprocess
 import fnmatch
+from datetime import date
 
 # extract each page of the pdf to its own individual page.
 # pdftk does the heaving lifting.
@@ -23,7 +24,7 @@ for filein in filelist:
 	if filein.endswith('.pdf'):
 
 		basename = os.path.splitext(filein)
-		command = "pdftoppm -png -rx 300 -ry 300 "+str(filein)+" "+basename[0]
+		command = "pdftoppm -png -rx 300 -ry 300 "+str(filein)+" Screenshot_"+str(date.today())+"_"+basename[0]
 		print(command)
 		os.system(command)
 		os.system("rm "+str(filein))
