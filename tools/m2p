@@ -3,16 +3,19 @@ filename=$1
 firstpage=$2
 secondpage=$(($firstpage+1))
 
+firstpage_value=$(printf "%02d" $firstpage)
+secondpage_value=$(printf "%02d" $secondpage)
+
 # echo "filename is $filename"
 # echo "firstpage is $firstpage"
 # echo "secondpage is $secondpage"
 
-firstpage_filename=$filename"_pg"$firstpage"-1.png"
-secondpage_filename=$filename"_pg"$secondpage"-1.png"
-output_filename=$filename"_pg"$firstpage"_pg"$secondpage"-1.png"
+firstpage_filename=$filename"_pg"$firstpage_value"-1.png"
+secondpage_filename=$filename"_pg"$secondpage_value"-1.png"
+output_filename=$filename"_pg"$firstpage_value"_pg"$secondpage_value"-1.png"
 
-echo "firstpage is $firstpage_filename"
-echo "secondpage is $secondpage_filename"
-echo "outpage is $output_filename"
+# echo "firstpage is $firstpage_filename"
+# echo "secondpage is $secondpage_filename"
+# echo "outpage is $output_filename"
 
 convert $firstpage_filename $secondpage_filename +append $output_filename
